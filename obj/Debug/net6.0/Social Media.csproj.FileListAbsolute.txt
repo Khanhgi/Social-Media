@@ -1,0 +1,35 @@
+D:\Side Projects\Social Media\bin\Debug\net6.0\appsettings.Development.json
+D:\Side Projects\Social Media\bin\Debug\net6.0\appsettings.json
+D:\Side Projects\Social Media\bin\Debug\net6.0\Social Media.staticwebassets.runtime.json
+D:\Side Projects\Social Media\bin\Debug\net6.0\Social Media.exe
+D:\Side Projects\Social Media\bin\Debug\net6.0\Social Media.deps.json
+D:\Side Projects\Social Media\bin\Debug\net6.0\Social Media.runtimeconfig.json
+D:\Side Projects\Social Media\bin\Debug\net6.0\Social Media.dll
+D:\Side Projects\Social Media\bin\Debug\net6.0\Social Media.pdb
+D:\Side Projects\Social Media\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Side Projects\Social Media\bin\Debug\net6.0\Neo4j.Driver.dll
+D:\Side Projects\Social Media\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.csproj.AssemblyReference.cache
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.GeneratedMSBuildEditorConfig.editorconfig
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.AssemblyInfoInputs.cache
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.AssemblyInfo.cs
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.csproj.CoreCompileInputs.cache
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.MvcApplicationPartsAssemblyInfo.cache
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.RazorAssemblyInfo.cache
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.RazorAssemblyInfo.cs
+D:\Side Projects\Social Media\obj\Debug\net6.0\staticwebassets\msbuild.Social Media.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Side Projects\Social Media\obj\Debug\net6.0\staticwebassets\msbuild.build.Social Media.props
+D:\Side Projects\Social Media\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Social Media.props
+D:\Side Projects\Social Media\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Social Media.props
+D:\Side Projects\Social Media\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Side Projects\Social Media\obj\Debug\net6.0\staticwebassets.build.json
+D:\Side Projects\Social Media\obj\Debug\net6.0\staticwebassets.development.json
+D:\Side Projects\Social Media\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Side Projects\Social Media\obj\Debug\net6.0\scopedcss\bundle\Social Media.styles.css
+D:\Side Projects\Social Media\obj\Debug\net6.0\scopedcss\projectbundle\Social Media.bundle.scp.css
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.csproj.CopyComplete
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.dll
+D:\Side Projects\Social Media\obj\Debug\net6.0\refint\Social Media.dll
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.pdb
+D:\Side Projects\Social Media\obj\Debug\net6.0\Social Media.genruntimeconfig.cache
+D:\Side Projects\Social Media\obj\Debug\net6.0\ref\Social Media.dll
