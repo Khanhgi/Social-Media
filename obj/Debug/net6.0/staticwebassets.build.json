@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ecTOGwKyZNUYG0uuiDIETE/ahaSCYUdu/2ZJlEeQCek=",
+  "Hash": "I3xdpcMVGj54OdFVP9cRVWY01JL/OU9ynva+VASLi9Y=",
   "Source": "Social Media",
   "BasePath": "_content/Social Media",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "D:\\Side Projects\\Social Media\\wwwroot\\Images\\R.png",
+      "SourceId": "Social Media",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Side Projects\\Social Media\\wwwroot\\",
+      "BasePath": "_content/Social Media",
+      "RelativePath": "Images/R.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\R.png"
+    },
+    {
       "Identity": "D:\\Side Projects\\Social Media\\wwwroot\\js\\LoginRegForm.js",
       "SourceId": "Social Media",
       "SourceType": "Discovered",
@@ -117,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\LoginRegForm.js"
+    },
+    {
+      "Identity": "D:\\Side Projects\\Social Media\\wwwroot\\js\\Pop-up.js",
+      "SourceId": "Social Media",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Side Projects\\Social Media\\wwwroot\\",
+      "BasePath": "_content/Social Media",
+      "RelativePath": "js/Pop-up.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Pop-up.js"
     },
     {
       "Identity": "D:\\Side Projects\\Social Media\\wwwroot\\js\\site.js",

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Social Media.bundle.scp.css"
     },
     {
+      "Id": "D:\\Side Projects\\Social Media\\wwwroot\\Images\\R.png",
+      "PackagePath": "staticwebassets\\Images\\R.png"
+    },
+    {
       "Id": "D:\\Side Projects\\Social Media\\wwwroot\\Videos\\You have the power to protect your peace (1).mp4",
       "PackagePath": "staticwebassets\\Videos\\You have the power to protect your peace (1).mp4"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "D:\\Side Projects\\Social Media\\wwwroot\\js\\LoginRegForm.js",
       "PackagePath": "staticwebassets\\js\\LoginRegForm.js"
+    },
+    {
+      "Id": "D:\\Side Projects\\Social Media\\wwwroot\\js\\Pop-up.js",
+      "PackagePath": "staticwebassets\\js\\Pop-up.js"
     },
     {
       "Id": "D:\\Side Projects\\Social Media\\wwwroot\\js\\site.js",

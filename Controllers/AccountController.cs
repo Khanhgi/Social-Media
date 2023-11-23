@@ -3,6 +3,7 @@ using Social_Media.Models;
 using System.Text;
 using Newtonsoft.Json;
 using Neo4j.Driver;
+using System.Net;
 
 namespace Social_Media.Controllers
 {
@@ -26,23 +27,32 @@ namespace Social_Media.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(User newUser)
         {
-            var apiUrl = "https://localhost:7112/api/APIAccount/Register";
-
-            var json = JsonConvert.SerializeObject(newUser);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await _httpClient.PostAsync(apiUrl, content);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
-                return RedirectToAction("Login");
+                var apiUrl = "https://localhost:7112/api/APIAccount/Register";
+
+                var json = JsonConvert.SerializeObject(newUser);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync(apiUrl, content);
+
+                response.EnsureSuccessStatusCode();
+
+                return RedirectToAction("Login", "Account");
             }
-            else
+            catch (HttpRequestException ex)
+            {
+                ModelState.AddModelError("", "Unable to connect to the server. Please try again later.");
+
+                return BadRequest("Invalid password format. Please follow the password requirements.");
+            }
+            catch (Exception ex)
             {
                 ModelState.AddModelError("", "Registration failed. Please try again.");
-                return View(newUser);
+                return View("Login", new AuthenticationViewModel());
             }
         }
+
 
         [HttpGet]
         public IActionResult Login()
@@ -53,22 +63,39 @@ namespace Social_Media.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(Login loginModel)
         {
-            var apiUrl = "https://localhost:7112/api/APIAccount/Login";
-
-            var json = JsonConvert.SerializeObject(loginModel);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-            var response = await _httpClient.PostAsync(apiUrl, content);
-
-            if (response.IsSuccessStatusCode)
+            try
             {
+                var apiUrl = "https://localhost:7112/api/APIAccount/Login";
+
+                var json = JsonConvert.SerializeObject(loginModel);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                var response = await _httpClient.PostAsync(apiUrl, content);
+
+                response.EnsureSuccessStatusCode();
+
                 return RedirectToAction("Index", "Home");
             }
-            else
+            catch (HttpRequestException ex)
             {
-                ModelState.AddModelError("", "Invalid login attempt. Please try again.");
-                return View(loginModel);
+                if (ex.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    ViewData["ErrorMessage"] = "*Invalid Login Information. Please try again";
+                }
+                else
+                {
+                    ViewData["ErrorConnectServer"] = "Unable to connect to the server. Please try again later";
+                }
+
+                return View("Login", new AuthenticationViewModel());
+            }
+            catch (Exception)
+            {
+                // Handle other types of exceptions
+                ViewData["ErrorMessage"] = "*Invalid Login Information. Please try again";
+                return View("Login", new AuthenticationViewModel());
             }
         }
+
     }
 }

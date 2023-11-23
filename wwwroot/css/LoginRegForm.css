@@ -12,9 +12,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('image/black sky.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    background-color: black;
 }
 
 .wrapper {
@@ -40,7 +40,7 @@ body {
 
     .wrapper .form-box {
         width: 100%;
-        padding: 40px;
+        padding: 27px;
     }
 
         .wrapper .form-box.login {
@@ -64,24 +64,9 @@ body {
         transform: translateX(0);
     }
 
-/*   .wrapper .icon-exit {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 45px;
-        height: 45px;
-        background: #4381b0;
-        font-size: 2em;
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-bottom-left-radius: 20px;
-    }*/
-
 .form-box h2 {
     font-size: 2em;
-    color: #006080;
+    color: #fff;
     text-align: center;
 }
 
@@ -89,7 +74,7 @@ body {
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid #006080;
+    border-bottom: 2px solid #fff;
     margin: 30px 0;
 }
 
@@ -99,7 +84,7 @@ body {
         left: 5px;
         transform: translateY(-50%);
         font-size: 1em;
-        color: #006080;
+        color: #fff;
         font-weight: 500;
         pointer-events: none;
         transition: .5s;
@@ -117,7 +102,7 @@ body {
         border: none;
         outline: none;
         font-size: 1em;
-        color: #006080;
+        color: #fff;
         font-weight: 600;
         padding: 0 35px 0 5px;
     }
@@ -126,26 +111,26 @@ body {
         position: absolute;
         right: 8px;
         font-size: 1.2em;
-        color: #006080;
+        color: #fff;
         line-height: 57px;
     }
 
 .remember-forgot {
     font-size: .9em;
-    color: #006080;
+    color: #fff;
     font-weight: 500;
-    margin: -15px 0 15px;
+    margin: 23px 0;
     display: flex;
     justify-content: space-between;
 }
 
     .remember-forgot label input {
-        accent-color: #006080;
+        accent-color: #fff;
         margin-right: 3px;
     }
 
     .remember-forgot a {
-        color: #006080;
+        color: #fff;
         text-decoration: none;
     }
 
@@ -156,7 +141,7 @@ body {
 .btn {
     width: 100%;
     height: 45px;
-    background: #006080;
+    background: #55d5d1;
     border: none;
     outline: none;
     border-radius: 6px;
@@ -168,14 +153,14 @@ body {
 
 .login-register {
     font-size: .9em;
-    color: #006080;
+    color: #fff;
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
 }
 
     .login-register p a {
-        color: #006080;
+        color: #fff;
         text-decoration: none;
         font-weight: 600;
     }
@@ -183,6 +168,147 @@ body {
         .login-register p a:hover {
             text-decoration: underline;
         }
+
+.btn-open-popup {
+    z-index: 2;
+}
+
+.popup {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.1);
+    margin-top: -25px;
+    transition: top 0ms ease-in-out 300ms, opacity 300ms ease-in-out, margin-top 300ms ease-in-out;
+    z-index: 2;
+}
+
+    .popup img {
+        position: absolute;
+        width: 70px;
+        bottom: 50%;
+        right: 84%;
+    }
+
+    .popup p {
+        left: 15%;
+        position: relative;
+    }
+
+    .popup .button-82-pushable {
+        position: relative;
+        left: 12%;
+        top: 1rem;
+        width: 25rem;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        outline-offset: 4px;
+        transition: filter 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+        .popup .button-82-pushable .button-82-shadow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: hsl(0deg 0% 0% / 0.25);
+            will-change: transform;
+            transform: translateY(2px);
+            transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        .popup .button-82-pushable .button-82-edge {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            background: linear-gradient( to left, hsl(340deg 100% 16%) 0%, hsl(340deg 100% 32%) 8%, hsl(340deg 100% 32%) 92%, hsl(340deg 100% 16%) 100% );
+        }
+
+        .popup .button-82-pushable .button-82-front {
+            display: block;
+            position: relative;
+            padding: 12px 27px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            color: white;
+            background: hsl(345deg 100% 47%);
+            will-change: transform;
+            transform: translateY(-4px);
+            transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        @media (min-width: 768px) {
+            .button-82-front {
+                font-size: 1.25rem;
+                padding: 12px 42px;
+            }
+        }
+
+        .popup .button-82-pushable:hover {
+            filter: brightness(110%);
+            -webkit-filter: brightness(110%);
+        }
+
+            .popup .button-82-pushable:hover .button-82-front {
+                transform: translateY(-6px);
+                transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+            }
+
+        .popup .button-82-pushable:active .button-82-front {
+            transform: translateY(-2px);
+            transition: transform 34ms;
+        }
+
+        .popup .button-82-pushable:hover .button-82-shadow {
+            transform: translateY(4px);
+            transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        .popup .button-82-pushable:active .button-82-shadow {
+            transform: translateY(1px);
+            transition: transform 34ms;
+        }
+
+        .popup .button-82-pushable:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        .popup > * {
+            margin: 15px 0;
+        }
+
+    body.active-popup {
+        overflow: hidden;
+    }
+
+    body.active-popup .wrapper {
+        filter: blur(5px);
+        background: rgba(0, 0, 0, 0.08);
+        transition: filter 0ms ease-in-out 0ms;
+    }
+
+    body.active-popup .popup {
+        top: 50%;
+        opacity: 1;
+        margin-top: 0px;
+        transition: top 0ms ease-in-out 0ms, opacity 300ms ease-in-out, margin-top 300ms ease-in-out;
+    }
+
 
 .background-video {
     position: fixed;
@@ -192,4 +318,10 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+}
+
+body.active-popup .background-video {
+    filter: blur(5px);
+    background: rgba(0, 0, 0, 0.08);
+    transition: filter 0ms ease-in-out 0ms;
 }

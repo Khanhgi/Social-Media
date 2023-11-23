@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Social_Media.Models;
 using Neo4j.Driver;
+using System.Text.RegularExpressions;
 
 namespace Social_Media.API_Controllers
 {
@@ -21,16 +22,20 @@ namespace Social_Media.API_Controllers
         {
             try
             {
+                if (!IsValidPassword(newUser.Password))
+                {
+                    return BadRequest("Invalid password format. Please follow the password requirements.");
+                }
+
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
+
                 using (var session = _driver.AsyncSession(o => o.WithDatabase("social")))
                 {
                     await session.WriteTransactionAsync(async tx =>
                     {
                         var createUserQuery = $@"
-                        CREATE (u:User {{
-                            username: '{newUser.Username}',
-                            email: '{newUser.Email}',
-                            password: '{newUser.Password}'
-                        }})";
+                    CREATE (u:User {{username: '{newUser.Username}', email: '{newUser.Email}', password: '{hashedPassword}'}})
+                ";
                         await tx.RunAsync(createUserQuery);
                     });
                 }
@@ -43,6 +48,17 @@ namespace Social_Media.API_Controllers
             }
         }
 
+
+        private bool IsValidPassword(string password)
+        {
+            var regexPattern = @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
+            var regex = new Regex(regexPattern);
+
+            return regex.IsMatch(password);
+        }
+
+
+
         [HttpPost("Login")]
         [Obsolete("This method is deprecated, use NewMethod instead.")]
         public async Task<IActionResult> Login([FromBody] Login loginModel)
@@ -53,11 +69,10 @@ namespace Social_Media.API_Controllers
                 {
                     var result = await session.ReadTransactionAsync(async tx =>
                     {
-                        var checkLoginQuery = $@"
-                        MATCH (u:User {{username: '{loginModel.Username}', password: '{loginModel.Password}'}})
-                        RETURN count(u) as userCount";
+                        var checkLoginQuery = "MATCH (u:User {username: $username, password: $password}) RETURN COUNT(u) as userCount";
+                        var parameters = new { username = loginModel.Username, password = loginModel.Password };
 
-                        var cursor = await tx.RunAsync(checkLoginQuery);
+                        var cursor = await tx.RunAsync(checkLoginQuery, parameters);
                         var record = await cursor.SingleAsync();
 
                         var userCount = record["userCount"].As<int>();
@@ -70,12 +85,14 @@ namespace Social_Media.API_Controllers
                     }
                     else
                     {
-                        return Unauthorized("Invalid login attempt");
+                        ModelState.AddModelError("", "Invalid username or password.");
+                        return Unauthorized("Invalid username or password.");
                     }
                 }
             }
             catch (Exception ex)
             {
+                ModelState.AddModelError("", $"Login failed: {ex.Message}");
                 return BadRequest($"Login failed: {ex.Message}");
             }
         }
